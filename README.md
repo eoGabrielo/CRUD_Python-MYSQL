@@ -3,7 +3,7 @@
 
 ## Descrição
 
-Projeto simples de sistema CRUD para cadastro, listagem e exclusão de produtos, utilizando Python para a interface e MySQL para o banco de dados.
+Projeto de sistema CRUD para cadastro, listagem e exclusão de produtos, utilizando Python para a interface e MySQL para o banco de dados.
 
 ## Funcionalidades
 
@@ -22,8 +22,8 @@ Projeto simples de sistema CRUD para cadastro, listagem e exclusão de produtos,
 * Python 3.x
 * MySQL instalado e rodando localmente
 * Biblioteca mysql-connector-python instalada
-* Banco de dados cadastro\_produtos criado no MySQL com a tabela produtos (descrição abaixo)
-
+* Banco de dados cadastro_produtos criado no MySQL com a tabela produtos
+  
 ## Como instalar dependências
 
 Use o comando pip install mysql-connector-python para instalar a biblioteca necessária.
@@ -32,10 +32,12 @@ Use o comando pip install mysql-connector-python para instalar a biblioteca nece
 
 A tabela produtos deve conter os campos:
 
-* idCodigo: inteiro, auto-incremento, chave primária
-* nome: texto (varchar 100), não nulo
-* preco: decimal com duas casas, não nulo
-* quantidade: inteiro, não nulo
+CREATE TABLE produtos (
+    idCodigo INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    quantidade INT NOT NULL
+);
 
 ## Como rodar o projeto
 
@@ -43,11 +45,11 @@ A tabela produtos deve conter os campos:
 2. Clone este repositório.
 3. Instale as dependências.
 4. Execute o programa com python main.py.
-5. Use o menu para cadastrar, listar e excluir produtos.
+5. Use o menu para cadastrar, listar e excluir produtos na main.
 
 ## Observações
 
-* O arquivo db.py está configurado para conexão local com usuário root e sem senha. Ajuste conforme seu ambiente.
+* O arquivo db.py está configurado para conexão local com usuário root e sem senha.
 * O sistema usa o campo idCodigo para identificar produtos na exclusão.
 
 ## Exemplo de uso
@@ -64,9 +66,9 @@ Ao executar o programa, a interface exibirá:
 
 Em seguida o sistema solicitará:
 
-"Digite o nome do produto: Arroz"
-"Qual valor do Arroz: 12.50"
-"Quantos quer adicionar no estoque: 30"
+"Digite o nome do produto: Monitor"
+"Qual valor do Arroz: 1500"
+"Quantos quer adicionar no estoque: 3"
 
 Após cadastrar, aparecerá a mensagem:
 
